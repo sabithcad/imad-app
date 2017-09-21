@@ -5,17 +5,43 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne = {
-    title : "article-one",
-    heading : "Article One",
-    date : "September 21, 2017",
-    content : `
-        <p>Hello this is article one. Hello this is article one. Hello this is article one. Hello this is article one. Hello this is article one. Hello this is article one.
-        </p>
-        <p>Hello this is article one. Hello this is article one. Hello this is article one. Hello this is article one. Hello this is article one. Hello this is article one.
-         </p>
-        <p>Hello this is article one. Hello this is article one. Hello this is article one. Hello this is article one. Hello this is article one. Hello this is article one.
-        </p>`
+
+var articles = {
+    articleOne : {
+        title : "article-one",
+        heading : "Article One",
+        date : "September 21, 2017",
+        content : `
+            <p>Hello this is article one. Hello this is article one. Hello this is article one. Hello this is article one. Hello this is article one. Hello this is article one.
+            </p>
+            <p>Hello this is article one. Hello this is article one. Hello this is article one. Hello this is article one. Hello this is article one. Hello this is article one.
+             </p>
+            <p>Hello this is article one. Hello this is article one. Hello this is article one. Hello this is article one. Hello this is article one. Hello this is article one.
+            </p>`
+    },
+    articleTwo : {
+        title : "article-two",
+        heading : "Article Two",
+        date : "September 22, 2017",
+        content : `
+            <p>Hello this is article two. Article two. Hello this is article two. Article two. Hello this is article two. Article two. Hello this is article two. Article two.
+            </p>
+            <p>Hello this is article two. Article two. Hello this is article two. Article two. Hello this is article two. Article two. Hello this is article two. Article two.
+            </p>`
+        
+        },
+    articleThree : {
+        title : "article-Three",
+        heading : "Article Three",
+        date : "September 23, 2017",
+        content : `
+            <p>Hello this is article Three. Article three is here. >Hello this is article Three. Article three is here. >Hello this is article Three. Article three is here.
+            </p>
+            <p>Hello this is article Three. Article three is here. >Hello this is article Three. Article three is here. >Hello this is article Three. Article three is here.
+            </p>`
+        
+        }
+
 };
 
 function createTemplate(data) {
