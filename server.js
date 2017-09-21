@@ -35,9 +35,9 @@ var articles = {
         heading : "Article Three",
         date : "September 23, 2017",
         content : `
-            <p>Hello this is article Three. Article three is here. >Hello this is article Three. Article three is here. Hello this is article Three. Article three is here.
+            <p>Hello this is article Three. Article three is here. Hello this is article Three. Article three is here. Hello this is article Three. Article three is here.
             </p>
-            <p>Hello this is article Three. Article three is here. >Hello this is article Three. Article three is here. Hello this is article Three. Article three is here.
+            <p>Hello this is article Three. Article three is here. Hello this is article Three. Article three is here. Hello this is article Three. Article three is here.
             </p>`
         
         }
