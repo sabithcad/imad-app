@@ -1,7 +1,7 @@
 var button = document.getElementById("counter");
 var counter = 0;
 button.onclick = function(){
-    console.log("Tes");
+ 
     var request = new XMLHttpRequest();
     
     request.onreadystatechange = function(){
@@ -26,7 +26,7 @@ var name = nameInput.value;
 var submit = document.getElementById("submit_btn");
 submit.onclick = function(){
     
-    console.log("test");
+  
     var names = ['Name1', 'Name2', 'Name3', 'Name4'];
     var list = "";
     
