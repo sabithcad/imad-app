@@ -122,6 +122,7 @@ app.get('/articles/:articleName', function(req, res){
     
     pool.query("SELECT * from article WHERE title = '" + req.params.articleName + "'", function(err,result){
         if(err){
+            res.send("CRASH")
             res.status(500).send(err.toString());
         }
         else{
