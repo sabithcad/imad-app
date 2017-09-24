@@ -1,8 +1,9 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
+var crypto = require('crypto');
 
-var Pool = require("pg").Pool;
+var Pool = require('pg').Pool;
 
 var config = {
   user:"sabithcad",
@@ -102,6 +103,15 @@ app.get('/articles/:articleName', function(req, res){
 });
 
 
+function hash(input){
+ var hashed = crypto.pbkdf2Sync();
+    
+}
+
+
+app.get('/hash/:input', function(req,res){
+   var hashedString = hash(req.params.input); 
+});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
