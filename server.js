@@ -105,12 +105,12 @@ app.get('/articles/:articleName', function(req, res){
 
 function hash(input,salt){
  var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
-    
+    return hashed.toString('hex');
 }
 
 
 app.get('/hash/:input', function(req,res){
-   var hashedString = hash(req.params.input, salt); 
+   var hashedString = hash(req.params.input, 'this-is-some-random-string'); 
 });
 
 app.get('/ui/style.css', function (req, res) {
