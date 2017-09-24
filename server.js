@@ -120,15 +120,22 @@ app.get('/counter', function(req,res){
 
 app.get('/articles/:articleName', function(req, res){
     
-    pool.query("SELECT * from article WHERE title = " + req.params.articleName, function(err,result){
+    pool.query("SELECT * from article WHERE title = '" + req.params.articleName + "'", function(err,result){
         if(err){
             res.status(500).send(err.toString());
         }
         else{
-            
+            if(result.rows.length === 0)
+            {
+                res.status(404).send("Title not found");
+            }
+            else{
+                var articleData = result.row[0];
+                res.send(createTemplate(articleData));
+            }
         }
     });
-   res.send(createTemplate(articleData));
+   
 });
 
 
