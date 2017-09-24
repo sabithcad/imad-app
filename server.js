@@ -102,6 +102,7 @@ app.get('/test-db', function (req,res){
       
       if(err)
       {
+          res.send("ERRR");
           res.status(500).send(err.toString());
       }
       else
