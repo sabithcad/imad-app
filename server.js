@@ -118,9 +118,17 @@ app.get('/counter', function(req,res){
    res.send(counter.toString());
 });
 
-app.get('/:articleName', function(req, res){
-    var articleName = req.params.articleName;
-   res.send(createTemplate(articles[articleName]));
+app.get('/articles/:articleName', function(req, res){
+    
+    pool.query("SELECT * from article WHERE title = " + req.params.articleName, function(err,result){
+        if(err){
+            res.status(500).send(err.toString());
+        }
+        else{
+            
+        }
+    });
+   res.send(createTemplate(articleData));
 });
 
 
