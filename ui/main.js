@@ -2,13 +2,32 @@ var signin = document.getElementById('sub_login');
 
 signin.onclick = function(){
     
+    var request = new XMLHttpRequest();
     
+    request.onreadystatechange = function(){
+      if(request.readyState == XMLHttpRequest.DONE)
+      {
+          if(request.status == 200)
+          {
+              var counter = request.responseText;
+              var span = document.getElementById('count');
+              span.innerHTML = counter.toString();
+          }
+      }
+    };
+    
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    request.open("POST", "http://sabithcad.imad.hasura-app.io/create-user", true);
+    request.send(null);
     
 };
 
 
 var signup = document.getElementById('create_user');
 signup.onclick = function(){
+    
+    
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
 };
