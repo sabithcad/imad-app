@@ -16,6 +16,10 @@ signin.onclick = function(){
           {
               alert('username/password incorrect');
           }
+          else if(request.status == 500)
+          {
+              alert('Something went wrong in server');
+          }
       }
     };
     
