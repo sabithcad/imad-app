@@ -1,3 +1,20 @@
+var signin = document.getElementById('sub_login');
+
+signin.onclick = function(){
+    
+    
+    
+};
+
+
+var signup = document.getElementById('create_user');
+signup.onclick = function(){
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+};
+
+
+
 var button = document.getElementById("counter");
 var counter = 0;
 button.onclick = function(){
