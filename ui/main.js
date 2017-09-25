@@ -41,12 +41,8 @@ signup.onclick = function(){
       {
           if(request.status == 200)
           {
-              console.log("SIGNED IN");
-              alert('Logged in successfully');
-          }
-          else if(request.status == 403)
-          {
-              alert('username/password incorrect');
+              console.log("Created new user");
+              alert('User created successfully');
           }
           else if(request.status == 500)
           {
