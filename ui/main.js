@@ -9,9 +9,12 @@ signin.onclick = function(){
       {
           if(request.status == 200)
           {
-              var counter = request.responseText;
-              var span = document.getElementById('count');
-              span.innerHTML = counter.toString();
+              console.log("SIGNED IN");
+              alert('Logged in successfully');
+          }
+          else if(request.status == 403)
+          {
+              alert('username/password incorrect');
           }
       }
     };
