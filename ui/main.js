@@ -18,8 +18,8 @@ signin.onclick = function(){
     
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-    request.open("POST", "http://sabithcad.imad.hasura-app.io/create-user", true);
-    request.send(null);
+    request.open("POST", "http://sabithcad.imad.hasura-app.io/login", true);
+    request.send(JSON.stringify({username:username, password:password}));
     
 };
 
