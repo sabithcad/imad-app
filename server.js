@@ -116,7 +116,7 @@ app.get('/hash/:input', function(req,res){
 });
 
 
-app.get('/create-user', function(req,res){
+app.post('/create-user', function(req,res){
    
    var salt = crypto.getRandomBytes(128).toString('hex');
    var dbString = hash(password , salt); 
@@ -125,7 +125,7 @@ app.get('/create-user', function(req,res){
             res.status(500).send(err.toString());
         }
         else{
-                res.send('User successfully created');
+                res.send('User successfully created' + username);
             }
    });
 });
